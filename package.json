@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "primary": "nodemon ./src/app.js"
+    "primary": "nodemon app.js"
   },
   "keywords": [],
   "author": "",

@@ -1,5 +1,5 @@
 import express from 'express';
-import  { userrouter } from './routes/user/index.js';
+import  { userrouter } from './src/routes/user/index.js';
 import cors from "cors"
 import cookieParser from "cookie-parser"
 
