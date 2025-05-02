@@ -4,8 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "hooks": "nodemon ./hooks/src/server.js",
-    "primary": "nodemon ./primary/src/server.js"
+    "primary": "nodemon ./src/app.js"
   },
   "keywords": [],
   "author": "",

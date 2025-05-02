@@ -1,7 +1,7 @@
 import express, { Router } from "express";
-import { signinSchema, signupSchema } from "../../../../types/index.js";
-import { db } from "../../../../db/db.js";
-import { userTable } from "../../../../db/schema.js";
+import { signinSchema, signupSchema } from "../../../types/index.js";
+import { db } from "../../../db/db.js";
+import { userTable } from "../../../db/schema.js";
 import { and, eq } from "drizzle-orm";
 import { authhandler } from "../../middlewares/authHandler.js";
 import jwt from "jsonwebtoken"
@@ -18,7 +18,7 @@ userRouter.post("/signup",async(req,res)=>{
     if(parsedbody.error){
           return res.status(400).json("you are sending wrong data")
     }
-   
+  
     const existsUser= await db.select().from(userTable).where(eq(userTable.username,parsedbody.data.username))
 
     if(existsUser.length>0){
@@ -26,10 +26,7 @@ userRouter.post("/signup",async(req,res)=>{
     }
     else{
         await db.insert(userTable).values(parsedbody.data);
-    }
-    
-   
-    
+    }   
 
     return res.status(200).json("registered successfullyyyy")
 
